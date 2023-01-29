@@ -1,24 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 24px;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-color: #F5F7FB;
 
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23DEEBF8' d='M46.6 -45.2C54.9 -38.4 52.3 -19.2 48 -4.3C43.7 10.5 37.6 21.1 29.4 36.2C21.1 51.3 10.5 70.9 -1 71.9C-12.5 72.9 -25.1 55.2 -31.6 40.1C-38.1 25.1 -38.7 12.5 -41.3 -2.6C-43.9 -17.7 -48.5 -35.4 -42 -42.3C-35.4 -49.1 -17.7 -45.1 0.7 -45.8C19.2 -46.6 38.4 -52.1 46.6 -45.2Z' transform='translate(100 100)' /%3E%3C/svg%3E"),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23FFFAD1' d='M41 -46.7C54.8 -37.3 68.7 -26 69.7 -13.3C70.8 -0.6 59 13.3 48.9 25.8C38.8 38.2 30.3 49.2 18.3 56.1C6.3 63 -9.4 65.8 -21.6 60.7C-33.8 55.6 -42.5 42.6 -52.4 28.7C-62.2 14.8 -73 0 -72.3 -14.3C-71.6 -28.6 -59.4 -42.4 -45.4 -51.7C-31.4 -61 -15.7 -65.8 -1 -64.6C13.6 -63.4 27.3 -56.1 41 -46.7Z' transform='translate(100 100)' /%3E%3C/svg%3E");
-  background-position: left bottom -200px, top right;
+  background-position: left -250px bottom -300px, top -300px right -300px;
   background-repeat: no-repeat;
-  background-origin: content-box, padding-box;
+  /* background-origin: content-box, padding-box; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 a {
@@ -30,27 +44,24 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
+p.p-intro {
+  margin-top: 7px;
+}
+
+button.btn-start {
+  border-radius: 15px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  margin-top: 30px;
+  padding: 1em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #4D5B9E;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -62,15 +73,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.intro--container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
