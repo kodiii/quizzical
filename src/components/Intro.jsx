@@ -1,10 +1,15 @@
-export default function Intro() {
-
+export default function Intro(props) {
+    console.log(props.toggleIntro);
     return (
-        <div className="intro--container">
+        <div className={props.toggleIntro}>
             <h1>Quizzical</h1>
             <p className="p-intro">Quizz game for lunatics</p>
-            <button className="btn-start">Start Quizz</button>
+            <button 
+                className="btn-start" 
+                onClick={props.hideClick}
+            >
+                Start Quizz
+            </button>
         </div>
     )
 }

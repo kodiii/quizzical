@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import Intro from './components/Intro'
-import Question from './components/Question'
+import Quizz from './components/Quizz'
 import { nanoid } from 'nanoid'
 // import './App.css'
 
-function App() {
+export default function App() {
   const [quizz, setQuizz] = useState([])
 
   useEffect(() => {
@@ -16,21 +16,32 @@ function App() {
     quizzApi()
   }, [])
 
-  const quizzQuestion = quizz.map(data => (
-      <Question 
+  const [toggle, setToggle ] = useState(false)
+
+  function hideClick() {
+    setToggle(prevToggle => !prevToggle)
+  }
+
+  const toggleIntro = toggle ? 'hide--intro' : 'show--intro'
+  const toggleQuizz = toggle ? 'show--quizz': 'hide--quizz'
+
+  const question = quizz.map(data => (
+      <Quizz 
         key={nanoid()}
         question={data.question}
         correctAnswer={data.correct_answer}
         incorrectAnswers={data.incorrect_answers}
+        toggleQuizz={toggleQuizz}
       />
   ))
 
   return (
     <div className="App">
-      <Intro />
-      {quizzQuestion}
+      <Intro 
+        hideClick={hideClick}
+        toggleIntro={toggleIntro}
+      />
+      {question}
     </div>
   )
 }
-
-export default App

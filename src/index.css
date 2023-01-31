@@ -30,6 +30,7 @@
 
 body {
   margin: 0;
+  padding: 40px 75px;
   display: flex;
   justify-content: center;
   place-items: center;
@@ -54,10 +55,14 @@ p.p-intro {
   margin-top: 7px;
 }
 
-.intro--container {
+.show--intro {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.hide--intro {
+  display: none;
 }
 
 button.btn-start {
@@ -79,9 +84,14 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-section.question {
+.hide--quizz {
+  display: none;
   padding: 15px 0;
   border-bottom: 1px solid #DBDEF0;
+}
+
+.show--quizz {
+  display: block;
 }
 
 .answers--group {
@@ -90,7 +100,7 @@ section.question {
 
 button.answer--btn {
   color: #4D5B9E;
-  margin-right: 10px;
+  margin: 0 10px 5px 0;
   padding: 5px 15px;
   border-radius: 15px;
   border: 1px solid #4D5B9E;
